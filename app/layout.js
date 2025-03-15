@@ -1,26 +1,33 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></link>
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import JivoChat from "./Jivochat";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-const inter = Inter({ subsets: ["latin"] });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata = {
-  title: "printersolutiononline",
-  description: "printersolutiononline",
+  title: "micro-sonic",
+  description: "micro-sonic",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <JivoChat/> */}
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {/* <Navbar /> Navbar should be rendered before children */}
+        <main>{children}</main> {/* Main content area for the children */}
+        <Footer /> {/* Footer should be at the bottom of the page */}
+      </body>
     </html>
   );
 }
-
-
-
-
-

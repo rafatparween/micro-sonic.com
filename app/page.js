@@ -1,50 +1,37 @@
-"use client"
+"use client";
+import Image from "next/image";
+import Navbar from "./Components/Navbar";
 
-import Footer from "./components/Footer";
-import Customer from "./components/Customer";
-import Technicians from "./components/Technicians";
-import Assistance from "./components/Assistance";
-import Avoid from "./components/Avoid";
-import Helppage from "./components/Helppage";
-import FooterSection from "./components/FooterSection";
-import PrinterSetup from "./services/content/PrinterSetup";
-import PrinterS from "./components/PrinterS";
-import SupportPage from "./components/SupportPage";
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import JivoChat from "./Jivochat";
-import SupportOptions from "./components/SupportOptions";
-import Digonode from "./components/Digonode";
-import Wrapper from "./components/Wrapper";
+import Header from "./Components/Header";
+import DataContent from "./Components/DataContent";
+import Footer from "./Components/Footer";
+import Support from "./Components/Support";
+import CinematicView from "./Components/CinematicView";
+import dynamic from 'next/dynamic';
+import 'tailwindcss/tailwind.css';
+import ParticlesBackground from "./Components/ParticlesBackground";
+import Slider from "./Components/PrinterSlider";
+import Banner from "./Components/Banner";
+import ContentSection from "./Components/ContentSection";
 
 
 
-
-function Home() {
+export default function Home() {
   return (
     <>
-      <Navbar/>
-      <Header/>
-      <PrinterSetup/>
-      <SupportOptions/>
-     
-      {/* <HpSupportSection/> */}
-      {/* <Solutions/> */}
-      {/* <PrinterS/> */}
-      <SupportPage/>
-      <Digonode/>
-      
-      {/* <Technicians/> */}
-      {/* <Assistance/> */}
-     
-      <Avoid/>
-      <Wrapper/>
-      <FooterSection/>
-      <JivoChat/>
+    <Navbar/>
+      {/* <Header/> */}
+      {/* <Support/>
+      <DataContent/> */}
 
-
+<div className="relative flex items-center justify-center h-screen bg-gradient-to-b from-blue-900 to-blue-700">
+    <ParticlesBackground/> 
+    
+  </div>
+  <Slider/>
+  <Banner/>
+  <ContentSection/>
+     
     </>
-
-  )
+  );
 }
-export default Home;
